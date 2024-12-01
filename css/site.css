@@ -20,19 +20,23 @@ body {
 }
 
 .page-body {
+}
+
+.page-row {
     display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .card {
     position: relative;
-    display: flex;
-    flex-direction: column;
     flex-grow: 1;
 
     outline: 1px solid light-dark(var(--fg-light), var(--fg-dark));
     padding: 1em;
     margin: 1em;
-    width: 20em;
+    min-width: 20em;
 }
 
 .card a::before {

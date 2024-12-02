@@ -50,9 +50,21 @@ body {
 }
 
 .card-title {
-    font-size: large;
+    font-size: 1.2em;
 }
 
 .card-text {
     padding: 1em;
+}
+
+/*
+    Adjustments based on the screen size viewing the web page.
+    Keep this stuff at the bottom of the css to ajust fire on top of all other changes
+*/
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media only screen and (max-device-width: 480px) {
+    body {
+        font-size: 2em;
+    }
 }

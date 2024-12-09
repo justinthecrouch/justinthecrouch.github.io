@@ -57,6 +57,11 @@ body {
     padding: 1em;
 }
 
+.breadcrumb {
+    text-decoration: none;
+    color: light-dark(var(--fg-light), var(--fg-dark));
+}
+
 /*
     Adjustments based on the screen size viewing the web page.
     Keep this stuff at the bottom of the css to ajust fire on top of all other changes

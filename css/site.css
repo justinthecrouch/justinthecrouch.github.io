@@ -1,0 +1,178 @@
+/*
+    General color css
+*/
+:root {
+    color-scheme: light dark;
+
+    --bg-light: #fcf6e5;
+    --bg-dark:  #0e3a25;
+
+    --fg-light: #5d6d74;
+    --fg-dark: #96a0a0;
+}
+
+/*
+    General spacing css
+*/
+:root {
+    --scalar0: 0;
+    --scalar1: 0.25;
+    --scalar2: 0.5;
+    --scalar3: 1.0;
+    --scalar4: 1.5;
+    --scalar5: 3.0;
+
+    --spacer-root: 1em;
+    --spacer0: calc(var(--spacer-root) * var(--scalar0));
+    --spacer1: calc(var(--spacer-root) * var(--scalar1));
+    --spacer2: calc(var(--spacer-root) * var(--scalar2));
+    --spacer3: calc(var(--spacer-root) * var(--scalar3));
+    --spacer4: calc(var(--spacer-root) * var(--scalar4));
+    --spacer5: calc(var(--spacer-root) * var(--scalar5));
+}
+
+.m-0 { margin: var(--spacer0); }
+.m-1 { margin: var(--spacer1); }
+.m-2 { margin: var(--spacer2); }
+.m-3 { margin: var(--spacer3); }
+.m-4 { margin: var(--spacer4); }
+.m-5 { margin: var(--spacer5); }
+
+.mb-0 { margin-bottom: var(--spacer0); }
+.mb-1 { margin-bottom: var(--spacer1); }
+.mb-2 { margin-bottom: var(--spacer2); }
+.mb-3 { margin-bottom: var(--spacer3); }
+.mb-4 { margin-bottom: var(--spacer4); }
+.mb-5 { margin-bottom: var(--spacer5); }
+
+.ml-0 { margin-left: var(--spacer0); }
+.ml-1 { margin-left: var(--spacer1); }
+.ml-2 { margin-left: var(--spacer2); }
+.ml-3 { margin-left: var(--spacer3); }
+.ml-4 { margin-left: var(--spacer4); }
+.ml-5 { margin-left: var(--spacer5); }
+
+.mr-0 { margin-right: var(--spacer0); }
+.mr-1 { margin-right: var(--spacer1); }
+.mr-2 { margin-right: var(--spacer2); }
+.mr-3 { margin-right: var(--spacer3); }
+.mr-4 { margin-right: var(--spacer4); }
+.mr-5 { margin-right: var(--spacer5); }
+
+.mt-0 { margin-top: var(--spacer0); }
+.mt-1 { margin-top: var(--spacer1); }
+.mt-2 { margin-top: var(--spacer2); }
+.mt-3 { margin-top: var(--spacer3); }
+.mt-4 { margin-top: var(--spacer4); }
+.mt-5 { margin-top: var(--spacer5); }
+
+.p-0 { padding: var(--spacer0); }
+.p-1 { padding: var(--spacer1); }
+.p-2 { padding: var(--spacer2); }
+.p-3 { padding: var(--spacer3); }
+.p-4 { padding: var(--spacer4); }
+.p-5 { padding: var(--spacer5); }
+
+.pb-0 { padding-bottom: var(--spacer0); }
+.pb-1 { padding-bottom: var(--spacer1); }
+.pb-2 { padding-bottom: var(--spacer2); }
+.pb-3 { padding-bottom: var(--spacer3); }
+.pb-4 { padding-bottom: var(--spacer4); }
+.pb-5 { padding-bottom: var(--spacer5); }
+
+.pl-0 { padding-left: var(--spacer0); }
+.pl-1 { padding-left: var(--spacer1); }
+.pl-2 { padding-left: var(--spacer2); }
+.pl-3 { padding-left: var(--spacer3); }
+.pl-4 { padding-left: var(--spacer4); }
+.pl-5 { padding-left: var(--spacer5); }
+
+.pr-0 { padding-right: var(--spacer0); }
+.pr-1 { padding-right: var(--spacer1); }
+.pr-2 { padding-right: var(--spacer2); }
+.pr-3 { padding-right: var(--spacer3); }
+.pr-4 { padding-right: var(--spacer4); }
+.pr-5 { padding-right: var(--spacer5); }
+
+.pt-0 { padding-top: var(--spacer0); }
+.pt-1 { padding-top: var(--spacer1); }
+.pt-2 { padding-top: var(--spacer2); }
+.pt-3 { padding-top: var(--spacer3); }
+.pt-4 { padding-top: var(--spacer4); }
+.pt-5 { padding-top: var(--spacer5); }
+
+/*
+    Depends on the spacing and color stuff defined above
+*/
+body {
+    background-color: light-dark(var(--bg-light), var(--bg-dark));
+    color: light-dark(var(--fg-light), var(--fg-dark));
+}
+
+a {
+    color: light-dark(var(--fg-light), var(--fg-dark));
+}
+
+.page-body {
+}
+
+.page-row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 0%;
+
+    outline: 1px solid light-dark(var(--fg-light), var(--fg-dark));
+    padding: 1em;
+    margin: 1em;
+    min-width: 20em;
+}
+
+.card a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.2em;
+}
+
+.card-text {
+    padding: 1em;
+}
+
+.breadcrumb {
+    text-decoration: none;
+    color: light-dark(var(--fg-light), var(--fg-dark));
+}
+
+.no-dsecoration {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/*
+    Adjustments based on the screen size viewing the web page.
+    Keep this stuff at the bottom of the css to ajust fire on top of all other changes
+*/
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media only screen and (max-device-width: 480px) {
+    body {
+        font-size: 2em;
+    }
+}

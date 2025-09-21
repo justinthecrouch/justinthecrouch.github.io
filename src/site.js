@@ -43,7 +43,7 @@ class Footer extends HTMLElement {
     }
 }
 
-customElements.define("footer-component", Footer);
+customElements.define('footer-component', Footer);
 
 class Header extends HTMLElement {
     constructor() {
@@ -65,7 +65,7 @@ class Header extends HTMLElement {
     }
 }
 
-customElements.define("header-component", Header);
+customElements.define('header-component', Header);
 
 class RedFlag extends HTMLElement {
     constructor() {
@@ -73,10 +73,10 @@ class RedFlag extends HTMLElement {
     }
 
     connectedCallback() {
-        var item = this.attributes.getNamedItem("href");
+        var item = this.attributes.getNamedItem('href');
         var link = null != item && item.value.length
                        ? item.value
-                       : "https://www.merriam-webster.com/dictionary/red-flag";
+                       : 'https://www.merriam-webster.com/dictionary/red-flag';
 
         this.innerHTML = `
             <style>
@@ -91,4 +91,4 @@ class RedFlag extends HTMLElement {
     }
 }
 
-customElements.define("red-flag", RedFlag);
+customElements.define('red-flag', RedFlag);
